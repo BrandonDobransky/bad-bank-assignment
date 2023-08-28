@@ -57,14 +57,19 @@ function Deposit(){
         bgcolor="success"
         txtcolor="white"
         header="Deposit"
-        body= {  
+        body= { show ? (
                 <>
               <div text="card-body"> {update ? 'Current Balance: ' + data : 'Current Balance: ' + data}</div><br/>
               <div text="card-body"> Deposit Amount<br/></div> 
                 <input  type="number" className="form-control" id="balance" placeholder="$0.00" value={value} onChange={handleTextChange} /><br/>
                 <button type="submit" className="btn btn-dark" onClick={()=> depositMoney(value)} >Deposit</button>
-                </>}
+                </>
+              ):(
+                <>
+                <h5>Thank you for your deposit.</h5>
+                <button type="submit" className="btn btn-light" onClick={clearForm}>Make another Deposit!</button>
+                </>
+               )}
         />
     );
 };
-            
