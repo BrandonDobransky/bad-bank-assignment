@@ -6,6 +6,7 @@ function Login(){
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [loggedIn, setLoggedIn] = React.useState(false);
     const ctx = React.useContext(UserContext); 
     
 function validate(field, label){
@@ -18,20 +19,13 @@ function validate(field, label){
 }
 
 function handleLogin(){
-     console.log(email,password);
+     console.log(email, password);
      console.log(ctx.users);
      if (!validate(email, 'email')) return; 
      if (!validate(password, 'password')) return;
-     const user = ctx.users.find((user) => user.email == email); 
-     if (!user) {
-        setStatus('User not found');
-        setTimeout(() => setStatus(''), 3000);
-        return
-     }
      if (user.password == password) {
-        setShow(false);
-       // ctx.loggedIn.push({user}); how to impliment
-        console.log(ctx);
+        setLoggedIn(true);
+        console.log('Congratulations, you are logged in')
         return;
      } else {
         setStatus('Password not recognized, try again.')
