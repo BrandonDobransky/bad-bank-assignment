@@ -1,9 +1,12 @@
 function AllData(){
     const ctx = React.useContext(UserContext);
+
+    let user = [...ctx.users];
+
     return (
       <>
      <h1>All Data</h1>
-      <table className="table" key="table">
+      <table className="table" key="table" border="1px">
     <thead>
       <tr>
         <th scope="col" key="user">User</th>
