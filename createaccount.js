@@ -8,15 +8,17 @@ function CreateAccount(){
 
     function validate(field, label){
         if (!field) {
-          setStatus('Error: please provide your ' + label);
+          setStatus('Error: please provide your' + label);
           setTimeout(() => setStatus(''),3000);
           return false;
-        }
-        if (true) {
-          setStatus('For choosing us as your bank, we have deposited $100 dollars into your account to show our gratitude.')
-        return true;
-        }
-    }
+        } else if (password.length < 8) {
+          setStatus ('Passwords must be at least 8 characters in length');
+          return false;
+        } else {
+          setStatus('For choosing us as your bank, we have deposited $100 dollars into your account to show our gratitude.');   
+          return true;
+          
+      }}
 
     function handleCreate(){
         console.log(name,email,password);
