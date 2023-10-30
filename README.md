@@ -11,5 +11,5 @@ then (start) -> node index.js
 
 Finally, open a browser page and open localhost:3000 to view it in action!
 
-#License 
+# License 
 This project is a product under the MIT license. 
